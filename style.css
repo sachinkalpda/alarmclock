@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 .wrapper{
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background-image: url('./images/bg.jpg');
     background-position: fixed;
@@ -149,6 +149,21 @@
 .btn:hover{
     background-color: cyan ;
     color: #000;
+}
+
+.btn-stop{
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid orangered;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+    display: none;
+}
+.btn-stop:hover{
+    background-color: orangered ;
+    color: #fff;
 }
 
 /* animation for clock vibration */

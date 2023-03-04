@@ -13,6 +13,7 @@ const alarm = (function () {
     const add = document.querySelector('.add');
     const setAlarm = document.querySelector('.set-alarm');
     const addNewAlarmBtn = document.querySelector('#setAlarm');
+    const stopAlarm = document.querySelector('#stopAlarm');
 
 
     const newHrs = document.querySelector('#hour');
@@ -21,7 +22,7 @@ const alarm = (function () {
 
     const alarmList = document.querySelector('#alarm-list');
 
-
+    const audio = new Audio('./sound/clock_sound.mp3');
 
     addNewAlarmBtn.addEventListener('click', function () {
         let alarmHrs = newHrs.value;
@@ -127,8 +128,9 @@ const alarm = (function () {
                 console.log('Triggered');
                 let alarmId = alarms[i].id;
                 clock.classList.add('vibrate');
+                stopAlarm.style.display = "block";
+                stopAlarm.dataset.id = alarmId;
                 // play sound
-                let audio = new Audio('./sound/clock_sound.mp3');
                 audio.play();
 
                 // loop sound
@@ -139,7 +141,7 @@ const alarm = (function () {
                     clock.classList.remove('vibrate');
                     audio.pause();
                     deleteAlarm(alarmId);
-                }, 60000);
+                }, 55000);
 
             }
         }
@@ -219,6 +221,16 @@ const alarm = (function () {
             const alarmId = target.dataset.id;
             deleteAlarm(alarmId);
         }
+
+        if (target.id === 'stopAlarm') {
+            let alarmId = target.dataset.id;
+            console.log(alarmId);
+            clock.classList.remove('vibrate');
+            audio.pause();
+            deleteAlarm(alarmId);
+            stopAlarm.style.display = "none";
+
+        }
     }
 
     function initialize() {
@@ -230,7 +242,7 @@ const alarm = (function () {
     }
 
     return {
-        initialize : initialize
+        initialize: initialize
     }
 })();
 
