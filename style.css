@@ -151,6 +151,7 @@
     color: #000;
 }
 
+/* animation for clock vibration */
 
 .clock.vibrate{
     animation: shake 0.5s;
