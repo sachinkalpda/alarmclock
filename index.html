@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;600;700&family=Tilt+Prism&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- clock container starts -->
+        <div class="container">
+            <div class="clock-container">
+
+                <!-- clock view starts -->
+                <div class="clock">
+                    <div class="day">Monday</div>
+                    <div class="time">05 : 45 : 30</div>
+                    <div class="zone">AM</div>
+    
+                    <div class="add">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                </div>
+                <!-- clock view ends -->
+            </div>
+
+            <!-- set alarm section starts -->
+            <div class="set-alarm">
+                <div class="form">
+                    <input type="number" id="hour" min="1" max="12" placeholder="HRS">
+                    <input type="number" id="minutes" min="0" max="59" placeholder="MIN">
+                    <select id="zone">
+                        <option value="AM" selected>AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </div>
+                <button class="btn" id="setAlarm">Set Alarm</button>
+            </div>
+
+            <!-- set alarm section ends -->
+
+            <!-- alarms list starts -->
+            <div class="list">
+                <ul id="alarm-list">
+                    <li id="emptyListmsg">
+                        No Pending Alarms!
+                    </li>
+                </ul>
+            </div>
+            <!-- alarms list ends -->
+
+        </div>
+        <!-- clock container ends -->
+    </div>
+
+
+    <script src="script.js"></script>
+    <script>
+
+        // to initialize the alarm object
+        alarm.initialize();
+    </script>
+
+</body>
+
+</html>
